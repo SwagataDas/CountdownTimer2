@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String FORMAT = "%02d:%02d:%02d";
 
     int seconds , minutes;
-    ImageView backbtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,13 +33,6 @@ public class MainActivity extends AppCompatActivity {
         textView=(TextView)findViewById(R.id.text);
         button = (Button) findViewById(R.id.button);
         etUsername = findViewById(R.id.editText);
-        backbtn = (ImageView) findViewById(R.id.backbtn);
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
         etPassword = findViewById(R.id.password);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

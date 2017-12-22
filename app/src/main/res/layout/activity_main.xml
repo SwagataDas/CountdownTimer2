@@ -23,13 +23,6 @@
             android:textStyle="bold"
             />
 
-        <ImageView
-            android:id="@+id/backbtn"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:padding="5dp"
-            android:src="@drawable/ic_backarrow"/>
-
     </RelativeLayout>
 
     <EditText
