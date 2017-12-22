@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView=(TextView)findViewById(R.id.text);
         button = (Button) findViewById(R.id.button);
+        etUsername = findViewById(R.id.editText);
+        etPassword = findViewById(R.id.password);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,23 +50,25 @@ public class MainActivity extends AppCompatActivity {
                 {
                     button.setEnabled(false);
 
-                    Toast alert = Toast.makeText(MainActivity.this, "Login Disabled for 30 mins", Toast.LENGTH_SHORT);
+                    Toast alert = Toast.makeText(MainActivity.this, "Login Disabled for 30 secs", Toast.LENGTH_SHORT);
                     alert.show();
 
-                    final CountDownTimer countDownTimer = new CountDownTimer(180000, 1000) { // adjust the milli seconds here
+                    final CountDownTimer countDownTimer = new CountDownTimer(30000, 1000) { // adjust the milli seconds here
                         public void onTick(long millisUntilFinished) {
 
-                            textView.setText("" + String.format(FORMAT,
+                            String time = "" + String.format(FORMAT,
                                     TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
                                     TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(
                                             TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
                                     TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
-                                            TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
+                                            TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
+                            textView.setText(time);
 
 
                         }
 
                         public void onFinish() {
+                            textView.setText("");
                             button.setEnabled(true);
                             counter = 2;
                         }
