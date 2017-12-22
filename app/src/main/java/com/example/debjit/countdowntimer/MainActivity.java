@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String FORMAT = "%02d:%02d:%02d";
 
     int seconds , minutes;
+    ImageView backbtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
         textView=(TextView)findViewById(R.id.text);
         button = (Button) findViewById(R.id.button);
         etUsername = findViewById(R.id.editText);
+        backbtn = (ImageView) findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         etPassword = findViewById(R.id.password);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
 
-                if (username.equals("Swagata") || password.equals("swagata123")) {
+                if (username.equals("Swagata") && password.equals("swagata123")) {
                     Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Next.class);
                     startActivity(intent);
@@ -63,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
                                     TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
                                             TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)));
                             textView.setText(time);
-
 
                         }
 

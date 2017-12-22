@@ -4,11 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4dd0e1"
     tools:context="com.example.debjit.countdowntimer.Next">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#3f51b5">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Count Down Timer"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFF"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            />
+
+        <ImageView
+            android:id="@+id/backbtn"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:src="@drawable/ic_backarrow"/>
+
+    </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello world"/>
+        android:text="You are coming to the next activity"
+        android:paddingTop="270dp"
+        android:paddingLeft="75dp"/>
 
 </android.support.constraint.ConstraintLayout>
