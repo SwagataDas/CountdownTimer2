@@ -1,102 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4dd0e1"
+    android:orientation="vertical"
     tools:context="com.example.debjit.countdowntimer.MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#3f51b5">
-
-        <TextView
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="Count Down Timer"
-            android:layout_centerInParent="true"
-            android:textColor="#FFFF"
-            android:textSize="19sp"
-            android:textStyle="bold"
-            />
-
-    </RelativeLayout>
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
-        android:layout_alignStart="@+id/password"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="Username"
-        android:textSize="20sp"
-        android:singleLine="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="347dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.413" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="305dp"
-        android:layout_height="50dp"
-        android:layout_alignBaseline="@+id/password"
-        android:layout_alignBottom="@+id/password"
-        android:layout_alignStart="@+id/password"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Submit"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="normal"
-       android:background="#7e57c2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602" />
 
     <TextView
-        android:id="@+id/text"
-        android:layout_width="120dp"
-        android:layout_height="29dp"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Count Down Timer"
+        android:background="#673ab7"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textColor="#FFFF"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:layout_marginTop="40dp"
+                android:minLines="1"
+                android:textSize="20sp"
+                tools:ignore="Suspicious0dp" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:layout_marginTop="30dp"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="305dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#7e57c2"
+                android:text="Submit"
+                android:layout_marginTop="50dp"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <Button
+                android:layout_width="305dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#7e57c2"
+                android:text="Demo"
+                android:layout_marginTop="50dp"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+            <Button
+                android:layout_width="305dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#7e57c2"
+                android:text="Demo"
+                android:layout_marginTop="50dp"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <Button
+                android:layout_width="305dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="#7e57c2"
+                android:text="Demo"
+                android:layout_marginTop="50dp"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="120dp"
+                android:layout_height="29dp"
+                android:layout_below="@+id/button"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="21dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
 
